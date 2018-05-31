@@ -19,6 +19,8 @@ $filters = [
     ['title' => 'forever new'],
     ['title' => 'gant'],
     ['title' => 'louis philippe'],
+    ['title' => 'duracell'],
+    ['title' => 'loot'],
 ];
 
 $driver = new \Behat\Mink\Driver\GoutteDriver();
