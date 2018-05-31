@@ -1,0 +1,10 @@
+{
+  "require": {
+    "php": ">=7.0",
+    "ext-zip": "*",
+    "phputils/net": "^0.0.4",
+    "behat/mink": "^1.7",
+    "behat/mink-goutte-driver": "^1.2"
+  },
+  "minimum-stability": "dev"
+}
