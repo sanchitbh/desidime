@@ -53,4 +53,4 @@ foreach ($boxes as $box) {
     }
 }
 
-print_r($results);
+print_r($results ?? ['none']);
