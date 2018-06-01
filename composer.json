@@ -8,7 +8,7 @@
   },
   "scripts": {
     "compile": [
-      "chmod -R 777 public/data/"
+      "chmod 777 public/data/seen.php"
     ]
   },
   "minimum-stability": "dev"
