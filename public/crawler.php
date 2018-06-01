@@ -1,5 +1,9 @@
 <?php
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 @include_once('../vendor/autoload.php');
 
 $merchants = ['flipkart', 'amazon', 'paytm'];
@@ -45,7 +49,7 @@ foreach ($boxes as $box) {
         $price = $priceBox->getText();
     }
 
-    if (true) {
+    if (TRUE) {
         foreach ($filters as $filter) {
             $words = preg_split('/\s+/', $filter['title']);
             $pass = empty($filter['merchant']) || in_array(strtolower($merchant), $merchants);
@@ -79,6 +83,8 @@ if (!empty($results)) {
     if (!empty($html)) {
         print $html;
         //email('sanchitphone1@gmail.com', 'sanchitbh@gmail.com', 'desidime: ' . join(', ', $items), $html);
-        file_put_contents($fn, '<?' . 'php return ' . var_export($seen, TRUE) . ';');
+        if (!file_put_contents($fn, '<?' . 'php return ' . var_export($seen, TRUE) . ';')) {
+            print "write failed :(";
+        }
     }
 }
