@@ -3,10 +3,10 @@
 @include_once('../vendor/autoload.php');
 
 $merchants = ['flipkart', 'amazon', 'paytm'];
-
+$max_price = 10000;
 $filters = [
-    ['title' => 'whiteline', 'merchant' => TRUE],
-    ['title' => 'pampers'],
+    ['title' => 'whiteline'],
+    ['title' => 'pampers', 'price' => 700],
     ['title' => 'wet wipe'],
     ['title' => 'bread maker'],
     ['title' => 'koss'],
@@ -20,7 +20,10 @@ $filters = [
     ['title' => 'gant'],
     ['title' => 'louis philippe'],
     ['title' => 'duracell'],
+    ['title' => 'meemee'],
+    ['title' => 'jockey'],
     ['title' => 'loot'],
+    ['title' => 'Bragg'],
 ];
 
 $driver = new \Behat\Mink\Driver\GoutteDriver();
@@ -42,17 +45,40 @@ foreach ($boxes as $box) {
         $price = $priceBox->getText();
     }
 
-    foreach ($filters as $filter) {
-        $words = preg_split('/\s+/', $filter['title']);
-        $pass = empty($filter['merchant']) || in_array(strtolower($merchant), $merchants);
-        foreach ((array) $words as $word) {
-            $pass = $pass && preg_match("/$word/i", $title);
-        }
+    if (true) {
+        foreach ($filters as $filter) {
+            $words = preg_split('/\s+/', $filter['title']);
+            $pass = empty($filter['merchant']) || in_array(strtolower($merchant), $merchants);
+            $pass = $pass && (empty($price) || empty($filter['price']) || ($price <= $filter['price']));
 
-        if ($pass) {
-            $results[] = "₹ $price: $title [$merchant]\n\nhttps://www.desidime.com/$link";
+            foreach ((array) $words as $word) {
+                $pass = $pass && preg_match("/$word/i", $title);
+            }
+
+            if ($pass) {
+                $results[] = ['title' => $title, 'link' => "https://www.desidime.com/$link", 'price' => $price ?: 0, 'merchant' => $merchant, 'keyword' => $filter['title']];
+            }
         }
     }
 }
 
-print_r($results ?? ['none']);
+$fn = __DIR__ . '/data/seen.php';
+$seen = @include_once ($fn) ?: [];
+
+if (!empty($results)) {
+    $html = '';
+
+    foreach ($results as $result) {
+        if (empty($seen[$result['link']])) {
+            $html .= sprintf("<h3>%s - %s</h3>\n<a href=\"%s\">%s</a>\n\n", $result['title'] . (!empty($result['merchant']) ? "(" . $result['merchant'] . ")" : ''), $result['price'], $result['link'], $result['link']);
+            $items[] = $result['keyword'];
+            $seen[$result['link']] = TRUE;
+        }
+    }
+
+    if (!empty($html)) {
+        print $html;
+        //email('sanchitphone1@gmail.com', 'sanchitbh@gmail.com', 'desidime: ' . join(', ', $items), $html);
+        file_put_contents($fn, '<?' . 'php return ' . var_export($seen, TRUE) . ';');
+    }
+}
