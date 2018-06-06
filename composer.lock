@@ -4,8 +4,88 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c9903e51f565d3b251e8a1792e0c5f7a",
+    "content-hash": "fd36d073e079e6b592656c7f1bca56d3",
     "packages": [
+        {
+            "name": "aws/aws-sdk-php",
+            "version": "3.61.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/aws/aws-sdk-php.git",
+                "reference": "527d7d10b30a2294686d146b0a12b587f28057b0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/527d7d10b30a2294686d146b0a12b587f28057b0",
+                "reference": "527d7d10b30a2294686d146b0a12b587f28057b0",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "ext-pcre": "*",
+                "ext-simplexml": "*",
+                "ext-spl": "*",
+                "guzzlehttp/guzzle": "^5.3.1|^6.2.1",
+                "guzzlehttp/promises": "~1.0",
+                "guzzlehttp/psr7": "^1.4.1",
+                "mtdowling/jmespath.php": "~2.2",
+                "php": ">=5.5"
+            },
+            "require-dev": {
+                "andrewsville/php-token-reflection": "^1.4",
+                "aws/aws-php-sns-message-validator": "~1.0",
+                "behat/behat": "~3.0",
+                "doctrine/cache": "~1.4",
+                "ext-dom": "*",
+                "ext-openssl": "*",
+                "nette/neon": "^2.3",
+                "phpunit/phpunit": "^4.8.35|^5.4.3",
+                "psr/cache": "^1.0"
+            },
+            "suggest": {
+                "aws/aws-php-sns-message-validator": "To validate incoming SNS notifications",
+                "doctrine/cache": "To use the DoctrineCacheAdapter",
+                "ext-curl": "To send requests using cURL",
+                "ext-openssl": "Allows working with CloudFront private distributions and verifying received SNS messages"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Aws\\": "src/"
+                },
+                "files": [
+                    "src/functions.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Amazon Web Services",
+                    "homepage": "http://aws.amazon.com"
+                }
+            ],
+            "description": "AWS SDK for PHP - Use Amazon Web Services in your PHP project",
+            "homepage": "http://aws.amazon.com/sdkforphp",
+            "keywords": [
+                "amazon",
+                "aws",
+                "cloud",
+                "dynamodb",
+                "ec2",
+                "glacier",
+                "s3",
+                "sdk"
+            ],
+            "time": "2018-06-05T22:44:12+00:00"
+        },
         {
             "name": "behat/mink",
             "version": "dev-master",
@@ -412,17 +492,72 @@
             "time": "2018-05-27T22:46:05+00:00"
         },
         {
+            "name": "mtdowling/jmespath.php",
+            "version": "2.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jmespath/jmespath.php.git",
+                "reference": "adcc9531682cf87dfda21e1fd5d0e7a41d292fac"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jmespath/jmespath.php/zipball/adcc9531682cf87dfda21e1fd5d0e7a41d292fac",
+                "reference": "adcc9531682cf87dfda21e1fd5d0e7a41d292fac",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "bin": [
+                "bin/jp.php"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "JmesPath\\": "src/"
+                },
+                "files": [
+                    "src/JmesPath.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
+                }
+            ],
+            "description": "Declaratively specify how to extract elements from a JSON document",
+            "keywords": [
+                "json",
+                "jsonpath"
+            ],
+            "time": "2016-12-03T22:08:25+00:00"
+        },
+        {
             "name": "phputils/all",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/san-kumar/phputils.git",
-                "reference": "e37aabb83a2ad2e4959147b2b4ef14c62e3183c9"
+                "reference": "efbc5c5e9c89fa9e07cabc31c44493eb179d1413"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/san-kumar/phputils/zipball/e37aabb83a2ad2e4959147b2b4ef14c62e3183c9",
-                "reference": "e37aabb83a2ad2e4959147b2b4ef14c62e3183c9",
+                "url": "https://api.github.com/repos/san-kumar/phputils/zipball/efbc5c5e9c89fa9e07cabc31c44493eb179d1413",
+                "reference": "efbc5c5e9c89fa9e07cabc31c44493eb179d1413",
                 "shasum": ""
             },
             "type": "library",
@@ -442,20 +577,20 @@
                 }
             ],
             "description": "All the missing php functions",
-            "time": "2018-05-16T14:14:44+00:00"
+            "time": "2018-06-06T18:27:38+00:00"
         },
         {
             "name": "phputils/net",
-            "version": "v0.0.4",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/san-kumar/netutils.git",
-                "reference": "c6f7f184b697e99887c73e3c65e8c432a6b6fbca"
+                "reference": "ee4ba62fc5e54ef2658e39d670435be593fd99f5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/san-kumar/netutils/zipball/c6f7f184b697e99887c73e3c65e8c432a6b6fbca",
-                "reference": "c6f7f184b697e99887c73e3c65e8c432a6b6fbca",
+                "url": "https://api.github.com/repos/san-kumar/netutils/zipball/ee4ba62fc5e54ef2658e39d670435be593fd99f5",
+                "reference": "ee4ba62fc5e54ef2658e39d670435be593fd99f5",
                 "shasum": ""
             },
             "require": {
@@ -478,7 +613,7 @@
                 }
             ],
             "description": "Quick internet related functions",
-            "time": "2018-04-22T19:47:09+00:00"
+            "time": "2018-06-06T20:34:09+00:00"
         },
         {
             "name": "psr/http-message",
@@ -576,12 +711,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/browser-kit.git",
-                "reference": "e419ab2b17167dfd1ad319ea4bbb3097b9458112"
+                "reference": "339364a05a5b7e41ca977847681e054dc8b4eb60"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/browser-kit/zipball/e419ab2b17167dfd1ad319ea4bbb3097b9458112",
-                "reference": "e419ab2b17167dfd1ad319ea4bbb3097b9458112",
+                "url": "https://api.github.com/repos/symfony/browser-kit/zipball/339364a05a5b7e41ca977847681e054dc8b4eb60",
+                "reference": "339364a05a5b7e41ca977847681e054dc8b4eb60",
                 "shasum": ""
             },
             "require": {
@@ -625,7 +760,7 @@
             ],
             "description": "Symfony BrowserKit Component",
             "homepage": "https://symfony.com",
-            "time": "2018-05-18T01:41:27+00:00"
+            "time": "2018-06-06T09:59:09+00:00"
         },
         {
             "name": "symfony/css-selector",
@@ -858,7 +993,10 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "aws/aws-sdk-php": 20,
+        "phputils/net": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

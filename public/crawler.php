@@ -3,14 +3,14 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+putenv('DEBUG=');
 
 @include_once('../vendor/autoload.php');
 
 $merchants = ['flipkart', 'amazon', 'paytm'];
 $max_price = 10000;
 $filters = [
-    ['title' => 'whiteline'],
-    ['title' => 'pampers', 'price' => 700],
+    ['title' => 'pampers \bL\b'],
     ['title' => 'wet wipe'],
     ['title' => 'bread maker'],
     ['title' => 'koss'],
@@ -18,59 +18,66 @@ $filters = [
     ['title' => 'fuzzy cooker'],
     ['title' => 'vacuum'],
     ['title' => 'wifi extender'],
-    ['title' => 'bosch screwdriver'],
+    ['title' => 'bosch screw driver'],
+    ['title' => 'fuzzy'],
     ['title' => 'vero moda'],
     ['title' => 'forever new'],
     ['title' => 'gant'],
     ['title' => 'louis philippe'],
     ['title' => 'duracell'],
-    ['title' => 'meemee'],
-    ['title' => 'jockey'],
-    ['title' => 'loot'],
-    ['title' => 'Bragg'],
+    ['title' => '\bmee\b'],
+    ['title' => 'jockey short'],
+    ['title' => 'uber pune'],
+    ['title' => 'ift'],
+    ['title' => 'baby'],
+    ['title' => 'chana'],
+    ['title' => '\bt\b shirt'],
+    ['title' => 'ucb'],
 ];
 
 $driver = new \Behat\Mink\Driver\GoutteDriver();
 $session = new \Behat\Mink\Session($driver);
 
 $session->start();
-$session->visit("https://www.desidime.com/forums/hot-deals-online?type=new");
-$page = $session->getPage();
-$boxes = $page->findAll('css', 'div.l-deal-box-textview');
+for ($i = 1; $i <= 3; $i++) {
+    $session->visit("https://www.desidime.com/forums/hot-deals-online?type=new&page=$i");
+    $page = $session->getPage();
+    $boxes = $page->findAll('css', 'div.l-deal-box-textview');
 
-/** @var \Behat\Mink\Element\Element $box */
-foreach ($boxes as $box) {
-    $link = $box->find('css', '.l-deal-dsp > a')->getAttribute('href');
-    $title = $box->find('css', '.l-deal-dsp')->getText();
-    $merchant = $box->find('css', '.l-deal-store')->getText();
-    $price = 0;
+    /** @var \Behat\Mink\Element\Element $box */
+    foreach ($boxes as $box) {
+        $link = $box->find('css', '.l-deal-dsp > a')->getAttribute('href');
+        $title = $box->find('css', '.l-deal-dsp')->getText();
+        $merchant = $box->find('css', '.l-deal-store')->getText();
+        $price = 0;
 
-    if ($priceBox = $box->find('css', '.l-deal-price')) {
-        $price = $priceBox->getText();
-    }
+        if ($priceBox = $box->find('css', '.l-deal-price')) {
+            $price = $priceBox->getText();
+        }
 
-    if (TRUE) {
-        foreach ($filters as $filter) {
-            $words = preg_split('/\s+/', $filter['title']);
-            $pass = empty($filter['merchant']) || in_array(strtolower($merchant), $merchants);
-            $pass = $pass && (empty($price) || empty($filter['price']) || ($price <= $filter['price']));
+        if (TRUE) {
+            foreach ($filters as $filter) {
+                $words = preg_split('/ +/', $filter['title']);
+                $pass = empty($filter['merchant']) || in_array(strtolower($merchant), $merchants);
+                $pass = $pass && (empty($price) || empty($filter['price']) || ($price <= $filter['price']));
 
-            foreach ((array) $words as $word) {
-                $pass = $pass && preg_match("/$word/i", $title);
-            }
+                foreach ((array) $words as $word) {
+                    $pass = $pass && preg_match("/$word/i", $title);
+                }
 
-            if ($pass) {
-                $results[] = ['title' => $title, 'link' => "https://www.desidime.com/$link", 'price' => $price ?: 0, 'merchant' => $merchant, 'keyword' => $filter['title']];
+                if ($pass) {
+                    $results[] = ['title' => $title, 'link' => "https://www.desidime.com/$link", 'price' => $price ?: 0, 'merchant' => $merchant, 'keyword' => $filter['title']];
+                }
             }
         }
     }
 }
 
-$fn = __DIR__ . '/data/seen.php';
-$seen = @include_once ($fn) ?: [];
-
 if (!empty($results)) {
     $html = '';
+    $seen = json_decode(cache_online('desidime'), TRUE) ?: [];
+
+    if (empty($seen) || !is_array($seen)) $seen = [];
 
     foreach ($results as $result) {
         if (empty($seen[$result['link']])) {
@@ -82,9 +89,10 @@ if (!empty($results)) {
 
     if (!empty($html)) {
         print $html;
-        //email('sanchitphone1@gmail.com', 'sanchitbh@gmail.com', 'desidime: ' . join(', ', $items), $html);
-        if (!file_put_contents($fn, '<?' . 'php return ' . var_export($seen, TRUE) . ';')) {
-            print "write failed :(";
+        email('sanchitphone1@gmail.com', 'sanchitbh@gmail.com', 'desidime: ' . join(', ', $items), $html);
+
+        if (!empty($seen)) {
+            cache_online('desidime', json_encode($seen));
         }
     }
 }
