@@ -33,6 +33,7 @@ $filters = [
     ['title' => 'chana'],
     ['title' => '\bt\b shirt'],
     ['title' => 'ucb'],
+    ['title' => 'huggies'],
 ];
 
 $driver = new \Behat\Mink\Driver\GoutteDriver();
