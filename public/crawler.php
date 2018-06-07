@@ -30,6 +30,8 @@ $filters = [
     ['title' => '\bift\b'],
     ['title' => '\bt\b shirt'],
     ['title' => 'ucb'],
+    ['title' => 'flight ticket'],
+    ['title' => 'amazonbasics'],
 ];
 
 $driver = new \Behat\Mink\Driver\GoutteDriver();
