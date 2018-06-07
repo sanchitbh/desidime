@@ -25,15 +25,11 @@ $filters = [
     ['title' => 'gant'],
     ['title' => 'louis philippe'],
     ['title' => 'duracell'],
-    ['title' => '\bmee\b'],
     ['title' => 'jockey short'],
     ['title' => 'uber pune'],
-    ['title' => 'ift'],
-    ['title' => 'baby'],
-    ['title' => 'chana'],
+    ['title' => '\bift\b'],
     ['title' => '\bt\b shirt'],
     ['title' => 'ucb'],
-    ['title' => 'huggies'],
 ];
 
 $driver = new \Behat\Mink\Driver\GoutteDriver();
@@ -90,7 +86,7 @@ if (!empty($results)) {
 
     if (!empty($html)) {
         print $html;
-        email('sanchitphone1@gmail.com', 'sanchitbh@gmail.com', 'desidime: ' . join(', ', $items), $html);
+        email('sanchit.notify@gmail.com', 'sanchitbh@gmail.com', 'desidime: ' . join(', ', $items), $html);
 
         if (!empty($seen)) {
             cache_online('desidime', json_encode($seen));
