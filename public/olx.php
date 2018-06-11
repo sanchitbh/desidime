@@ -10,7 +10,7 @@ putenv('DEBUG=');
 $searches = [
     ['title' => 'lenovo \bp2\b', 'max_price' => 8000, 'min_price' => 5000, 'ignore_area' => TRUE],
     ['title' => 'qc35', 'max_price' => 15000, 'min_price' => 3000, 'ignore_area' => TRUE],
-    ['title' => 'ift', 'max_price' => 10000, 'min_price' => 0, 'ignore_area' => TRUE],
+    ['title' => 'ift', 'max_price' => 100000, 'min_price' => 0, 'ignore_area' => TRUE],
 ];
 
 $areas = ['amanora', 'magarpatta', 'hadapsar', 'kothrud'];
