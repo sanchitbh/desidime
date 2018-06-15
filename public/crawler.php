@@ -34,6 +34,8 @@ $filters = [
     ['title' => 'amazonbasics'],
     ['title' => '\bband\b'],
     ['title' => 'mi band'],
+    ['title' => 'drill'],
+    ['title' => '\btool\b'],
 ];
 
 $driver = new \Behat\Mink\Driver\GoutteDriver();
