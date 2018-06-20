@@ -18,8 +18,9 @@ $filters = [
     ['title' => 'fuzzy cooker'],
     ['title' => 'vacuum'],
     ['title' => 'wifi extender'],
-    ['title' => 'bosch screw driver'],
+    ['title' => 'bosch'],
     ['title' => 'fuzzy'],
+    ['title' => 'veromoda'],
     ['title' => 'vero moda'],
     ['title' => 'forever new'],
     ['title' => 'gant'],
@@ -36,6 +37,17 @@ $filters = [
     ['title' => 'mi band'],
     ['title' => 'drill'],
     ['title' => '\btool\b'],
+    ['title' => '\bbig\b \bbasket\b'],
+    ['title' => 'bigbasket'],
+    ['title' => '\bnike\b'],
+    ['title' => '\bzara\b'],
+    ['title' => '\bVuitton\b'],
+    ['title' => '\bAdidas\b'],
+    ['title' => '\bGucci\b'],
+    ['title' => '\bArmani\b'],
+    ['title' => '\bgap\b'],
+    ['title' => 'Under Armour'],
+    ['title' => 'Under Armour'],
 ];
 
 $driver = new \Behat\Mink\Driver\GoutteDriver();
@@ -85,7 +97,7 @@ if (!empty($results)) {
     foreach ($results as $result) {
         if (empty($seen[$result['link']])) {
             $html .= sprintf("<h3>%s - %s</h3>\n<a href=\"%s\">%s</a>\n\n", $result['title'] . (!empty($result['merchant']) ? "(" . $result['merchant'] . ")" : ''), $result['price'], $result['link'], $result['link']);
-            $items[] = $result['keyword'];
+            $items[] = preg_replace('/' . preg_quote('\b') . '/', '', $result['keyword']);
             $seen[$result['link']] = TRUE;
         }
     }
