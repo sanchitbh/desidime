@@ -48,6 +48,7 @@ $filters = [
     ['title' => '\bgap\b'],
     ['title' => 'Under Armour'],
     ['title' => 'Under Armour'],
+    ['title' => 'wills'],
 ];
 
 $driver = new \Behat\Mink\Driver\GoutteDriver();
