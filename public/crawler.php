@@ -12,6 +12,7 @@ $max_price = 10000;
 $filters = [
     ['title' => 'pampers \bL\b'],
     ['title' => 'wet wipe'],
+    ['title' => '\bbaby\b'],
     ['title' => 'bread maker'],
     ['title' => 'koss'],
     ['title' => 'klipsh'],
