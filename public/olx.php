@@ -26,9 +26,10 @@ $seen = json_decode(cache_online('olx'), TRUE) ?: [];
 
 foreach ($searches as $search) {
     $slug = slugify(preg_replace('/(\\\\b)/', '', $search['title']));
-    $session->visit("https://www.olx.in/pune/q-$slug/?search%5Bphotos%5D=false");
+    $session->visit("https://www.megaproxy.com/go/https://www.olx.in/pune/q-$slug/?search%5Bphotos%5D=false");
     $page = $session->getPage();
     print $page->getHtml();
+    exit;
     $tables = $page->findAll('css', 'table[summary="Ad"]');
 
     /** @var \Behat\Mink\Element\Element $table */

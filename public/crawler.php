@@ -49,6 +49,8 @@ $filters = [
     ['title' => 'Under Armour'],
     ['title' => 'wills'],
     ['title' => 'marks spencer'],
+    ['title' => 'crocs'],
+    ['title' => 'bellies'],
 ];
 
 $driver = new \Behat\Mink\Driver\GoutteDriver();
