@@ -8,8 +8,8 @@ putenv('DEBUG=');
 @include_once('../vendor/autoload.php');
 
 $searches = [
-    ['title' => 'lenovo \bp2\b', 'max_price' => 8000, 'min_price' => 5000, 'ignore_area' => TRUE],
-    ['title' => 'qc35', 'max_price' => 15000, 'min_price' => 3000, 'ignore_area' => TRUE],
+    ['title' => 'gt 710', 'max_price' => 3000, 'min_price' => 500, 'ignore_area' => TRUE],
+    ['title' => 'bose 35', 'max_price' => 13000, 'min_price' => 2500, 'ignore_area' => TRUE],
     ['title' => 'ift', 'max_price' => 100000, 'min_price' => 0, 'ignore_area' => TRUE],
 ];
 
@@ -26,10 +26,8 @@ $seen = json_decode(cache_online('olx'), TRUE) ?: [];
 
 foreach ($searches as $search) {
     $slug = slugify(preg_replace('/(\\\\b)/', '', $search['title']));
-    $session->visit("https://www.megaproxy.com/go/https://www.olx.in/pune/q-$slug/?search%5Bphotos%5D=false");
+    $session->visit("https://www.queries.review/proxy.php?raw=1&url=" . urlencode("https://www.olx.in/pune/q-$slug/?search%5Bphotos%5D=false"));
     $page = $session->getPage();
-    print $page->getHtml();
-    exit;
     $tables = $page->findAll('css', 'table[summary="Ad"]');
 
     /** @var \Behat\Mink\Element\Element $table */
@@ -39,7 +37,7 @@ foreach ($searches as $search) {
             $title = $ad->getText();
             $link = trim(preg_replace('/\#.*/', '', $ad->getAttribute('href')));
 
-            if (empty($seen[$link]) || true) {
+            if (empty($seen[$link]) || TRUE) {
                 $seen[$link] = TRUE;
 
                 $price = $table->find('css', 'p.price')->getText();
