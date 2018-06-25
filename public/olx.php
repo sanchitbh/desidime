@@ -38,7 +38,7 @@ foreach ($searches as $search) {
             $title = $ad->getText();
             $link = trim(preg_replace('/\#.*/', '', $ad->getAttribute('href')));
 
-            if (empty($seen[$link]) || TRUE) {
+            if (empty($seen[$link])) {
                 $seen[$link] = TRUE;
 
                 $price = $table->find('css', 'p.price')->getText();
@@ -69,9 +69,10 @@ foreach ($searches as $search) {
 
 if (!empty($html)) {
     print $html;
-    email('sanchit.notify@gmail.com', 'sanchitbh@gmail.com', 'olx items', $html, false);
 
     if (!empty($seen)) {
         cache_online('olx', json_encode($seen));
     }
+
+    email('sanchit.notify@gmail.com', 'sanchitbh@gmail.com', 'olx items', $html, false);
 }
