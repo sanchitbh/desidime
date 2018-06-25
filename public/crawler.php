@@ -51,6 +51,8 @@ $filters = [
     ['title' => 'marks spencer'],
     ['title' => 'crocs'],
     ['title' => 'bellies'],
+    ['title' => 'nvidia'],
+    ['title' => 'geforce'],
 ];
 
 $driver = new \Behat\Mink\Driver\GoutteDriver();
