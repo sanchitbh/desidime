@@ -10,7 +10,7 @@ putenv('DEBUG=');
 
 $searches = [
     ['title' => 'gt 710', 'max_price' => 3000, 'min_price' => 500, 'ignore_area' => TRUE],
-    ['title' => 'bose 35', 'max_price' => 13000, 'min_price' => 2500, 'ignore_area' => TRUE],
+    //['title' => 'bose 35', 'max_price' => 13000, 'min_price' => 2500, 'ignore_area' => TRUE],
     ['title' => 'ift', 'max_price' => 100000, 'min_price' => 0, 'ignore_area' => TRUE],
 ];
 
