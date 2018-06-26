@@ -53,6 +53,8 @@ $filters = [
     ['title' => 'bellies'],
     ['title' => 'nvidia'],
     ['title' => 'geforce'],
+    ['title' => 'tissue'],
+    ['title' => 'paper towel'],
 ];
 
 $driver = new \Behat\Mink\Driver\GoutteDriver();
