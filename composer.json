@@ -14,19 +14,5 @@
       "chmod 777 public/data/seen.php"
     ]
   },
-  "repositories": [
-    {
-      "type": "path",
-      "url": "e:/Dropbox/projects/libs/phputils/all"
-    },
-    {
-      "type": "path",
-      "url": "e:/Dropbox/projects/libs/phputils/net"
-    },
-    {
-      "type": "path",
-      "url": "e:/Dropbox/projects/libs/phputils/mechanize"
-    }
-  ],
   "minimum-stability": "dev"
 }
