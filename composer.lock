@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fd36d073e079e6b592656c7f1bca56d3",
+    "content-hash": "c6829b2f9f55572ba0edda8c876376ad",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.61.1",
+            "version": "3.62.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "527d7d10b30a2294686d146b0a12b587f28057b0"
+                "reference": "b45b916eceb20d3c9e2b36e9e93e926a278d97ca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/527d7d10b30a2294686d146b0a12b587f28057b0",
-                "reference": "527d7d10b30a2294686d146b0a12b587f28057b0",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/b45b916eceb20d3c9e2b36e9e93e926a278d97ca",
+                "reference": "b45b916eceb20d3c9e2b36e9e93e926a278d97ca",
                 "shasum": ""
             },
             "require": {
@@ -84,7 +84,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2018-06-05T22:44:12+00:00"
+            "time": "2018-07-06T17:41:33+00:00"
         },
         {
             "name": "behat/mink",
@@ -92,12 +92,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/minkphp/Mink.git",
-                "reference": "04ab7af68536ac2c80fd6c08a6fd3620d3409891"
+                "reference": "d5ee350c40baff5f331a05ebdbe1927345c9ac8b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/minkphp/Mink/zipball/04ab7af68536ac2c80fd6c08a6fd3620d3409891",
-                "reference": "04ab7af68536ac2c80fd6c08a6fd3620d3409891",
+                "url": "https://api.github.com/repos/minkphp/Mink/zipball/d5ee350c40baff5f331a05ebdbe1927345c9ac8b",
+                "reference": "d5ee350c40baff5f331a05ebdbe1927345c9ac8b",
                 "shasum": ""
             },
             "require": {
@@ -111,7 +111,8 @@
                 "behat/mink-browserkit-driver": "extremely fast headless driver for Symfony\\Kernel-based apps (Sf2, Silex)",
                 "behat/mink-goutte-driver": "fast headless driver for any app without JS emulation",
                 "behat/mink-selenium2-driver": "slow, but JS-enabled driver for any app (requires Selenium2)",
-                "behat/mink-zombie-driver": "fast and JS-enabled headless driver for any app (requires node.js)"
+                "behat/mink-zombie-driver": "fast and JS-enabled headless driver for any app (requires node.js)",
+                "dmore/chrome-mink-driver": "fast and JS-enabled driver for any app (requires chromium or google chrome)"
             },
             "type": "library",
             "extra": {
@@ -142,7 +143,7 @@
                 "testing",
                 "web"
             ],
-            "time": "2018-01-07T17:25:05+00:00"
+            "time": "2018-06-24T20:08:51+00:00"
         },
         {
             "name": "behat/mink-browserkit-driver",
@@ -260,12 +261,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfPHP/Goutte.git",
-                "reference": "395f61d7c2e15a813839769553a4de16fa3b3c96"
+                "reference": "3f0eaf0a40181359470651f1565b3e07e3dd31b8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfPHP/Goutte/zipball/395f61d7c2e15a813839769553a4de16fa3b3c96",
-                "reference": "395f61d7c2e15a813839769553a4de16fa3b3c96",
+                "url": "https://api.github.com/repos/FriendsOfPHP/Goutte/zipball/3f0eaf0a40181359470651f1565b3e07e3dd31b8",
+                "reference": "3f0eaf0a40181359470651f1565b3e07e3dd31b8",
                 "shasum": ""
             },
             "require": {
@@ -307,7 +308,7 @@
             "keywords": [
                 "scraper"
             ],
-            "time": "2017-11-19T08:45:40+00:00"
+            "time": "2018-06-29T15:13:57+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -315,12 +316,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "0773d442aa96baf19d7195f14ba6e9c2da11f8ed"
+                "reference": "7bc46be28e4b01b96d0dfda8c58169072e626558"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/0773d442aa96baf19d7195f14ba6e9c2da11f8ed",
-                "reference": "0773d442aa96baf19d7195f14ba6e9c2da11f8ed",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/7bc46be28e4b01b96d0dfda8c58169072e626558",
+                "reference": "7bc46be28e4b01b96d0dfda8c58169072e626558",
                 "shasum": ""
             },
             "require": {
@@ -372,7 +373,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2018-04-23T13:18:18+00:00"
+            "time": "2018-06-25T23:51:40+00:00"
         },
         {
             "name": "guzzlehttp/promises",
@@ -431,12 +432,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/psr7.git",
-                "reference": "7fa8852adec06dabfbde1b028c4c9d9087558256"
+                "reference": "58f6e264ef0e4107c8b3d15a9c2e653b2bce0b4d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/psr7/zipball/7fa8852adec06dabfbde1b028c4c9d9087558256",
-                "reference": "7fa8852adec06dabfbde1b028c4c9d9087558256",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/58f6e264ef0e4107c8b3d15a9c2e653b2bce0b4d",
+                "reference": "58f6e264ef0e4107c8b3d15a9c2e653b2bce0b4d",
                 "shasum": ""
             },
             "require": {
@@ -489,7 +490,7 @@
                 "uri",
                 "url"
             ],
-            "time": "2018-05-27T22:46:05+00:00"
+            "time": "2018-06-08T08:55:26+00:00"
         },
         {
             "name": "mtdowling/jmespath.php",
@@ -549,16 +550,11 @@
         {
             "name": "phputils/all",
             "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/san-kumar/phputils.git",
-                "reference": "efbc5c5e9c89fa9e07cabc31c44493eb179d1413"
-            },
             "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/san-kumar/phputils/zipball/efbc5c5e9c89fa9e07cabc31c44493eb179d1413",
-                "reference": "efbc5c5e9c89fa9e07cabc31c44493eb179d1413",
-                "shasum": ""
+                "type": "path",
+                "url": "e:/Dropbox/projects/libs/phputils/all",
+                "reference": "2067efcf24ce1ba4fccb190af1a4654e4f3815ae",
+                "shasum": null
             },
             "type": "library",
             "autoload": {
@@ -566,7 +562,6 @@
                     "src/everything.php"
                 ]
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -576,22 +571,45 @@
                     "email": "lambdaphp@gmail.com"
                 }
             ],
-            "description": "All the missing php functions",
-            "time": "2018-06-06T18:27:38+00:00"
+            "description": "All the missing php functions"
+        },
+        {
+            "name": "phputils/mechanize",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "e:/Dropbox/projects/libs/phputils/mechanize",
+                "reference": "18f666fcda4fbe6e743c1a86b4aa4f10f55f4eba",
+                "shasum": null
+            },
+            "require": {
+                "phputils/all": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/mechanize.php"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "San Kumar",
+                    "email": "lambdaphp@gmail.com"
+                }
+            ],
+            "description": "Tiniest PHP mechanize"
         },
         {
             "name": "phputils/net",
             "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/san-kumar/netutils.git",
-                "reference": "ee4ba62fc5e54ef2658e39d670435be593fd99f5"
-            },
             "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/san-kumar/netutils/zipball/ee4ba62fc5e54ef2658e39d670435be593fd99f5",
-                "reference": "ee4ba62fc5e54ef2658e39d670435be593fd99f5",
-                "shasum": ""
+                "type": "path",
+                "url": "e:/Dropbox/projects/libs/phputils/net",
+                "reference": "1b70cc7957ec273669d8b3509c3931f131edbef7",
+                "shasum": null
             },
             "require": {
                 "phputils/all": "*"
@@ -602,7 +620,6 @@
                     "src/net.php"
                 ]
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -612,8 +629,7 @@
                     "email": "lambdaphp@gmail.com"
                 }
             ],
-            "description": "Quick internet related functions",
-            "time": "2018-06-06T20:34:09+00:00"
+            "description": "Quick internet related functions"
         },
         {
             "name": "psr/http-message",
@@ -821,12 +837,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/dom-crawler.git",
-                "reference": "f9cae86c8f7ed57554c9b68fd6776ac641055b93"
+                "reference": "d575a88f0744273b5165ae52ec56e73ffa70ad9c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/dom-crawler/zipball/f9cae86c8f7ed57554c9b68fd6776ac641055b93",
-                "reference": "f9cae86c8f7ed57554c9b68fd6776ac641055b93",
+                "url": "https://api.github.com/repos/symfony/dom-crawler/zipball/d575a88f0744273b5165ae52ec56e73ffa70ad9c",
+                "reference": "d575a88f0744273b5165ae52ec56e73ffa70ad9c",
                 "shasum": ""
             },
             "require": {
@@ -870,7 +886,7 @@
             ],
             "description": "Symfony DomCrawler Component",
             "homepage": "https://symfony.com",
-            "time": "2018-05-07T14:51:25+00:00"
+            "time": "2018-07-05T11:54:37+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -995,7 +1011,9 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "aws/aws-sdk-php": 20,
-        "phputils/net": 20
+        "phputils/all": 20,
+        "phputils/net": 20,
+        "phputils/mechanize": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

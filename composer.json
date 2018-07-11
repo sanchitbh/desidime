@@ -5,12 +5,28 @@
     "behat/mink": "^1.7",
     "behat/mink-goutte-driver": "^1.2",
     "aws/aws-sdk-php": "^3.0@dev",
-    "phputils/net": "dev-master"
+    "phputils/all": "dev-master",
+    "phputils/net": "dev-master",
+    "phputils/mechanize": "dev-master"
   },
   "scripts": {
     "compile": [
       "chmod 777 public/data/seen.php"
     ]
   },
+  "repositories": [
+    {
+      "type": "path",
+      "url": "e:/Dropbox/projects/libs/phputils/all"
+    },
+    {
+      "type": "path",
+      "url": "e:/Dropbox/projects/libs/phputils/net"
+    },
+    {
+      "type": "path",
+      "url": "e:/Dropbox/projects/libs/phputils/mechanize"
+    }
+  ],
   "minimum-stability": "dev"
 }
